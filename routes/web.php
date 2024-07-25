@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'guest'], function(){
     //login
-    Route::get('/', Login::class);
+    Route::get('/', Login::class)->name('login');
     Route::get('/login', Login::class)->name('auth.login');
     
 });
