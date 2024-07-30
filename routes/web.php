@@ -9,13 +9,13 @@ use App\Livewire\StudentLivewire;
 use App\Livewire\TeacherLivewire;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => 'guest'], function(){
+Route::group(['middleware' => 'guest'], function () {
     //login
-    Route::get('/', Login::class)->name('login');
-    Route::get('/login', Login::class)->name('auth.login');
-    
+    Route::get('/login', Login::class)->name('login');
+    Route::get('/signin', Login::class)->name('auth.login');
 });
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', StudentLivewire::class)->name('dashboard');
     Route::get('/student', StudentLivewire::class)->name('student');
     Route::get('/teacher', TeacherLivewire::class)->name('teacher');
     Route::get('/class', ClassLivewire::class)->name('class');
