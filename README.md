@@ -3,7 +3,7 @@
 <p align="center">
     <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200" alt="Laravel Logo"></a>
     <a href="https://tailwindcss.com" target="_blank"><img src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype-white.944c5d0ef628083bb316f9b3d643385c86bcdb3d.svg" style="bg-red-100" width="200" alt="TailwindCss Logo"></a>
-    <a href="https://tailwindcss.com" target="_blank"><img width="300" src="https://raw.githubusercontent.com/livewire/livewire/main/art/readme_logo.png" alt="Livewire Logo" style="bg-red-500" width="200"> </a>
+    <a href="https://laravel-livewire.com" target="_blank"><img class="larger" src="https://cdn.worldvectorlogo.com/logos/livewire-2.svg" style="bg-red-100" width="200" alt="Livewire logo vector"></a>
 </p>
 
 * [DEMO](https://lara-simple-livewire.artefakcoding.my.id/login).
