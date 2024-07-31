@@ -5,60 +5,49 @@
     <a href="https://tailwindcss.com" target="_blank"><img src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype-white.944c5d0ef628083bb316f9b3d643385c86bcdb3d.svg" style="bg-red-100" width="200" alt="TailwindCss Logo"></a>
 </p>
 
-## About Laravel
+* [DEMO](https://lara-simple-livewire.artefakcoding.my.id/login).
+* [API Documentation](https://lara-simple-livewire.artefakcoding.my.id/api/docs).
+* [Source Code](https://github.com/bagubr/simple-code-livewire-tailwind-laravel.git).
+* [Documentation](https://github.com/bagubr/simple-code-livewire-tailwind-laravel.git/blob/main/README.md).
+* [License](https://github.com/bagubr/simple-code-livewire-tailwind-laravel.git/blob/main/LICENSE).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Development
+```bash
+git clone
+cp .env.example .env
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan serve
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Production
+```bash
+git clone
+composer install --optimize-autoloader --no-dev
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+sudo chown -R www-data:www-data /var/www/html/lara-pmb/storage
+sudo chown -R www-data:www-data /var/www/html/lara-pmb/bootstrap/cache
+sudo chmod -R 775 /var/www/html/lara-pmb/storage
+sudo chmod -R 775 /var/www/html/lara-pmb/bootstrap/cache
 
-## Learning Laravel
+# ubah direktori database ke www-data agar bisa di write
+chown www-data:www-data /var/www/html/lara-pmb/database
+sudo chown www-data:www-data /var/www/html/lara-pmb/database/database.sqlite
+sudo chmod 664 /var/www/html/lara-pmb/database/database.sqlite
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+sudo nano /etc/nginx/sites-available/lara_pmb
+sudo ln -s /etc/nginx/sites-available/lara_pmb /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
